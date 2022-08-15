@@ -1,0 +1,23 @@
+<table class="table">
+    <thead  class="thead-dark">
+    <tr>
+        <th scope="col">Application Name</th>
+        <th scope="col">Creation</th>
+        <th scope="col">Cloture</th>
+        <th scope="col">Etat</th>
+
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let  demand of demands"  scope="row">
+        <th scope="col">{{demand.appName}}</th>
+        <th scope="col">{{demand.creation}}</th>
+        <th scope="col">{{demand.cloture}}</th>
+        <th scope="col">{{demand.etat}}</th>
+
+        </tr>
+    </tbody>
+    
+</table>
+
+
