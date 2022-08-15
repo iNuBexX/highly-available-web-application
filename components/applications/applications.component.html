@@ -1,0 +1,24 @@
+<table class="table">
+    <thead  class="thead-dark">
+    <tr>
+        <th scope="col">Application Name</th>
+        <th scope="col">Version</th>
+        <th scope="col">Os</th>
+        <th scope="col">Description</th>
+        <ng-template [ngIf]="isLoggedIn"> <th scope="col">Order</th> </ng-template>
+     
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tempapp of apps"  scope="row">
+        <th scope="col">{{tempapp.appName}}</th>
+        <th scope="col">{{tempapp.version}}</th>
+        <th scope="col">{{tempapp.os}}</th>
+        <th scope="col">{{tempapp.description}}</th>
+        <ng-template [ngIf]="isLoggedIn">  <td><button type="submit" (click)="senddemand(tempapp.appName)">Order</button></td></ng-template>
+        <ng-template [ngIf]="status == 'ADMIN'">  <td><button type="submit" (click)="delete(tempapp.appName)">Delete</button></td></ng-template>
+        </tr>
+    </tbody>
+</table>
+
+
